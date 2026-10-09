@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add("js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      d.setAttribute("data-theme", t || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));
+    })();
+  </script>
+
+  <title>Projets | Idrissa Wade — Étudiant en Informatique &amp; Développeur</title>
+  <meta name="description" content="Projets d'Idrissa Wade : gestion pédagogique (Flask, MySQL), station météo connectée (ESP32), data science et réseaux.">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projets | Idrissa Wade">
+  <meta property="og:description" content="Web, data, réseaux et IoT : les projets d'un étudiant en Licence 3 Informatique.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="../index.html" aria-label="Idrissa Wade — accueil">
+        <span class="brand__mark" aria-hidden="true">IW</span>
+        <span class="brand__name">Idrissa Wade</span>
+      </a>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="../index.html#accueil">Accueil</a></li>
+          <li><a class="nav__link" href="../index.html#a-propos">À propos</a></li>
+          <li><a class="nav__link" href="../index.html#competences">Compétences</a></li>
+          <li><a class="nav__link" href="projets.html" aria-current="page">Projets</a></li>
+          <li><a class="nav__link" href="parcours.html">Parcours</a></li>
+          <li><a class="nav__link" href="../index.html#experiences">Expériences</a></li>
+          <li><a class="nav__link" href="../index.html#hackathon">Hackathon</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Changer de thème">☀</button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section__eyebrow">Projets</span>
+        <h1>Mes projets</h1>
+        <p>Chaque projet est présenté avec le problème traité, la solution développée et mon rôle. Les éléments marqués <span class="todo">à compléter</span> sont à renseigner avec tes informations réelles.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:2rem">
+      <div class="container">
+
+        <div class="filters" role="group" aria-label="Filtrer les projets par catégorie">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tous</button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-btn" type="button" data-filter="data" aria-pressed="false">Data</button>
+          <button class="filter-btn" type="button" data-filter="reseaux" aria-pressed="false">Réseaux</button>
+          <button class="filter-btn" type="button" data-filter="iot" aria-pressed="false">IoT</button>
+          <button class="filter-btn" type="button" data-filter="autres" aria-pressed="false">Autres</button>
+        </div>
+        <p id="filter-status" class="filter-status" aria-live="polite"></p>
+
+        <div class="grid grid--2">
+
+          <!-- ===== PROJET 1 ===== -->
+          <!-- Pour ajouter un projet : copie un bloc <article>, change data-category (web, data, reseaux, iot, autres) et le contenu. -->
+          <article id="gestion-pedagogique" class="card project-card" data-category="web">
+            <div class="project-card__media">Web · Flask<img src="../images/projets/gestion-pedagogique.jpg" alt="Capture de la plateforme de gestion pédagogique" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head">
+                <h3>Gestion pédagogique universitaire</h3>
+                <span class="badge badge--todo">Statut à compléter</span>
+              </div>
+              <p>Plateforme web de gestion pédagogique pour un établissement universitaire.</p>
+              <p><strong>Problème.</strong> Les informations pédagogiques (étudiants, enseignants, salles, groupes, emplois du temps) sont dispersées et difficiles à coordonner.</p>
+              <p><strong>Solution.</strong> Une application web qui les centralise dans une base MySQL, avec un accès adapté à chaque rôle.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">MySQL</span></div>
+              <p><strong>Fonctionnalités visées</strong> <span class="todo">à confirmer : terminées / en cours</span></p>
+              <ul class="project-card__list">
+                <li>Gestion des étudiants et des enseignants</li>
+                <li>Gestion des salles et des groupes</li>
+                <li>Gestion des emplois du temps</li>
+                <li>Gestion des utilisateurs</li>
+                <li>Tableaux de bord selon les rôles</li>
+              </ul>
+              <p><strong>Mon rôle.</strong> <span class="todo">MON_RÔLE</span></p>
+              <div class="project-card__links">
+                <a href="GITHUB_URL_PROJET_1" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <!-- <a href="DEMO_URL_PROJET_1" target="_blank" rel="noopener noreferrer">Démo</a> -->
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== PROJET 2 ===== -->
+          <article id="station-meteo" class="card project-card" data-category="iot">
+            <div class="project-card__media">IoT · ESP32<img src="../images/projets/station-meteo.jpg" alt="Photo de la station météo connectée" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head">
+                <h3>Station météo connectée</h3>
+                <span class="badge badge--todo">Statut à compléter</span>
+              </div>
+              <p>Système IoT qui mesure et affiche des données environnementales.</p>
+              <p><strong>Problème.</strong> Connaître en temps réel les conditions ambiantes (température, humidité) sans relevé manuel.</p>
+              <p><strong>Solution.</strong> Un microcontrôleur ESP32 lit un capteur DHT, affiche les valeurs sur un écran LCD (I2C) et les transmet via Wi-Fi à Blynk.</p>
+              <div class="tags"><span class="tag">ESP32 / Arduino</span><span class="tag">DHT</span><span class="tag">LCD I2C</span><span class="tag">Wi-Fi</span><span class="tag">Blynk</span></div>
+              <p><strong>Fonctionnalités</strong> <span class="todo">à confirmer</span></p>
+              <ul class="project-card__list">
+                <li>Mesure par capteur DHT</li>
+                <li>Affichage local sur écran LCD</li>
+                <li>Consultation à distance avec Blynk</li>
+              </ul>
+              <p><strong>Mon rôle.</strong> <span class="todo">MON_RÔLE</span></p>
+              <div class="project-card__links">
+                <a href="GITHUB_URL_PROJET_2" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <!-- <a href="DEMO_URL_PROJET_2" target="_blank" rel="noopener noreferrer">Démo</a> -->
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== PROJET 3 ===== -->
+          <article id="data-science" class="card project-card" data-category="data">
+            <div class="project-card__media">Data · Machine Learning<img src="../images/projets/data-science.jpg" alt="Visualisation du projet Data Science" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head">
+                <h3>Projet Data Science</h3>
+                <span class="badge badge--todo">Statut à compléter</span>
+              </div>
+              <p>Analyse de données et modèle de Machine Learning réalisés en Python.</p>
+              <p><strong>Problème.</strong> <span class="todo">QUESTION_À_RÉSOUDRE</span></p>
+              <p><strong>Solution.</strong> Un pipeline complet, des données brutes jusqu'aux résultats du modèle.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Scikit-learn</span><span class="tag">Jupyter</span></div>
+              <ul class="project-card__list">
+                <li>Données : <span class="todo">SOURCE_ET_TAILLE</span></li>
+                <li>Nettoyage et préparation</li>
+                <li>Analyse et visualisation</li>
+                <li>Modèle : <span class="todo">ALGORITHME</span></li>
+                <li>Résultats : <span class="todo">MÉTRIQUES</span></li>
+              </ul>
+              <p><strong>Mon rôle.</strong> <span class="todo">MON_RÔLE</span></p>
+              <div class="project-card__links">
+                <a href="GITHUB_URL_PROJET_3" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== PROJET 4 ===== -->
+          <article id="reseaux" class="card project-card" data-category="reseaux">
+            <div class="project-card__media">Réseaux · Packet Tracer<img src="../images/projets/reseaux.jpg" alt="Schéma d'un réseau local sous Cisco Packet Tracer" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head">
+                <h3>Projets réseaux</h3>
+                <span class="badge badge--todo">Statut à compléter</span>
+              </div>
+              <p>Travaux de conception et de configuration de réseaux simulés sous Cisco Packet Tracer.</p>
+              <p><strong>Problème.</strong> Faire communiquer correctement des équipements au sein d'un réseau local.</p>
+              <p><strong>Solution.</strong> Plan d'adressage IP, configuration des équipements, puis vérification de la connectivité avec des tests ping.</p>
+              <div class="tags"><span class="tag">Cisco Packet Tracer</span><span class="tag">LAN</span><span class="tag">Adressage IP</span><span class="tag">Ping</span></div>
+              <ul class="project-card__list">
+                <li>Adressage IP</li>
+                <li>Configuration réseau</li>
+                <li>Communication entre équipements</li>
+                <li>Tests de connectivité</li>
+              </ul>
+              <p><strong>Mon rôle.</strong> <span class="todo">MON_RÔLE</span></p>
+              <div class="project-card__links">
+                <a href="GITHUB_URL_PROJET_4" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Idrissa Wade</p>
+        <p>Étudiant en Licence 3 Informatique</p>
+        <p>UFR STA — Université Ahmadou Makhtar Mbow</p>
+        <p>Diamniadio, Sénégal</p>
+      </div>
+      <nav class="footer__links" aria-label="Liens externes">
+        <a href="GITHUB_URL" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="LINKEDIN_URL" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:EMAIL">Email</a>
+      </nav>
+      <p class="footer__copy">© 2026 Idrissa Wade — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="icon-btn back-to-top" type="button" aria-label="Retour en haut de la page">↑</button>
+
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/filters.js" defer></script>
+  <script src="../js/scroll-top.js" defer></script>
+</body>
+</html>

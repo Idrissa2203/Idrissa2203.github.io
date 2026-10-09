@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add("js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      d.setAttribute("data-theme", t || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));
+    })();
+  </script>
+
+  <title>Contact | Idrissa Wade — Étudiant en Informatique &amp; Développeur</title>
+  <meta name="description" content="Contacter Idrissa Wade pour un stage, une collaboration, un projet ou un hackathon.">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | Idrissa Wade">
+  <meta property="og:description" content="Stage, collaboration, projet ou hackathon : écrivez-moi.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="../index.html" aria-label="Idrissa Wade — accueil">
+        <span class="brand__mark" aria-hidden="true">IW</span>
+        <span class="brand__name">Idrissa Wade</span>
+      </a>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="../index.html#accueil">Accueil</a></li>
+          <li><a class="nav__link" href="../index.html#a-propos">À propos</a></li>
+          <li><a class="nav__link" href="../index.html#competences">Compétences</a></li>
+          <li><a class="nav__link" href="projets.html">Projets</a></li>
+          <li><a class="nav__link" href="parcours.html">Parcours</a></li>
+          <li><a class="nav__link" href="../index.html#experiences">Expériences</a></li>
+          <li><a class="nav__link" href="../index.html#hackathon">Hackathon</a></li>
+          <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Changer de thème">☀</button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section__eyebrow">Contact</span>
+        <h1>Me contacter</h1>
+        <p>Stage, collaboration, projet ou hackathon : écrivez-moi, je réponds avec plaisir.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:2rem">
+      <div class="container split">
+
+        <form id="contact-form" class="form reveal" novalidate>
+          <div class="form__group">
+            <label for="name">Nom</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+            <p id="name-error" class="field-error"></p>
+          </div>
+          <div class="form__group">
+            <label for="email">Adresse e-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+            <p id="email-error" class="field-error"></p>
+          </div>
+          <div class="form__group">
+            <label for="subject">Sujet</label>
+            <input id="subject" name="subject" type="text" required aria-describedby="subject-error">
+            <p id="subject-error" class="field-error"></p>
+          </div>
+          <div class="form__group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+            <p id="message-error" class="field-error"></p>
+          </div>
+          <button class="btn btn--primary" type="submit">Envoyer le message</button>
+          <p id="form-status" class="form__status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="reveal">
+          <h2>Autres moyens</h2>
+          <div class="contact-links">
+            <a href="mailto:wade.idrissa@uam.edu.sn"><span aria-hidden="true">✉</span> wade.idrissa@uam.edu.sn</a>
+            <a href="https://github.com/Idrissa2203" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⌥</span> GitHub — Idrissa2203</a>
+            <a href="LINKEDIN_URL" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">in</span> LinkedIn — LINKEDIN_URL</a>
+          </div>
+          <p style="color:var(--text-muted);margin-top:1.5rem">Basé à Diamniadio, Sénégal.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Idrissa Wade</p>
+        <p>Étudiant en Licence 3 Informatique</p>
+        <p>UFR STA — Université Ahmadou Makhtar Mbow</p>
+        <p>Diamniadio, Sénégal</p>
+      </div>
+      <nav class="footer__links" aria-label="Liens externes">
+        <a href="https://github.com/Idrissa2203" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:wade.idrissa@uam.edu.sn">Email</a>
+        <a href="mailto:EMAIL">Email</a>
+      </nav>
+      <p class="footer__copy">© 2026 Idrissa Wade — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="icon-btn back-to-top" type="button" aria-label="Retour en haut de la page">↑</button>
+
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/reveal.js" defer></script>
+  <script src="../js/form.js" defer></script>
+  <script src="../js/scroll-top.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Thème appliqué avant l'affichage (évite le flash) + marqueur « JavaScript actif » -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add("js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      d.setAttribute("data-theme", t || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));
+    })();
+  </script>
+
+  <title>Idrissa Wade | Étudiant en Informatique &amp; Développeur</title>
+  <meta name="description" content="Portfolio d'Idrissa Wade, étudiant en Licence 3 Informatique à l'UFR STA de l'Université Ahmadou Makhtar Mbow (Diamniadio, Sénégal). Développement web, data science, réseaux et IoT.">
+  <meta name="keywords" content="Idrissa Wade, portfolio, étudiant informatique, développeur, Python, Flask, JavaScript, data science, réseaux, IoT, ESP32, Sénégal, UAM">
+  <meta name="author" content="Idrissa Wade">
+  <meta name="theme-color" content="#0b0f14">
+  <!-- SITE_URL : à remplacer par l'adresse publique du portfolio une fois en ligne -->
+  <link rel="canonical" href="SITE_URL/">
+
+  <!-- Open Graph (aperçu lors du partage sur LinkedIn, WhatsApp…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Idrissa Wade | Étudiant en Informatique &amp; Développeur">
+  <meta property="og:description" content="Étudiant en Licence 3 Informatique : développement web, data science, réseaux et IoT. Découvre mes projets.">
+  <meta property="og:url" content="SITE_URL/">
+  <meta property="og:image" content="SITE_URL/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Données structurées : aide les moteurs de recherche à comprendre ton profil -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Idrissa Wade",
+    "jobTitle": "Étudiant en Licence 3 Informatique",
+    "url": "SITE_URL/",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Université Ahmadou Makhtar Mbow (UAM) — UFR Sciences et Technologies",
+      "address": { "@type": "PostalAddress", "addressLocality": "Diamniadio", "addressCountry": "SN" }
+    },
+    "knowsAbout": ["Développement web", "Python", "Flask", "JavaScript", "Science des données", "Machine Learning", "Réseaux informatiques", "Internet des objets"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="#accueil" aria-label="Idrissa Wade — retour à l'accueil">
+        <span class="brand__mark" aria-hidden="true">IW</span>
+        <span class="brand__name">Idrissa Wade</span>
+      </a>
+
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#accueil">Accueil</a></li>
+          <li><a class="nav__link" href="#a-propos">À propos</a></li>
+          <li><a class="nav__link" href="#competences">Compétences</a></li>
+          <li><a class="nav__link" href="#formations">Formations</a></li>
+          <li><a class="nav__link" href="#projets">Projets</a></li>
+          <li><a class="nav__link" href="#parcours">Parcours</a></li>
+          <li><a class="nav__link" href="#experiences">Expériences</a></li>
+          <li><a class="nav__link" href="#hackathon">Hackathon</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Changer de thème">☀</button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ========== HERO ========== -->
+    <section id="accueil" class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div>
+          <p class="hero__hello">&gt; bonjour_</p>
+          <h1 id="hero-title">Je suis <span class="gradient">Idrissa Wade</span></h1>
+          <p class="hero__role">Étudiant en Licence 3 Informatique  | Passionné par les technologies</p>
+          <p class="hero__intro">
+            À l'UFR STA de l'Université Ahmadou Makhtar Mbow, j'apprends en construisant :
+            applications web, analyse de données, réseaux et objets connectés.
+            J'aime partir d'un problème concret pour en faire une solution qui fonctionne.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projets">Découvrir mes projets</a>
+            <a class="btn btn--ghost" href="#contact">Me contacter</a>
+            <a class="btn btn--ghost" href="assets/cv-idrissa-wade.pdf" download>Télécharger mon CV</a>
+          </div>
+        </div>
+
+        <!-- Photo : place ton fichier dans images/profile.jpg (carré, 600×600 px conseillé) -->
+        <figure class="hero__photo">
+            <span class="hero__initials" aria-hidden="true">IW</span>
+            <img src="images/profile.jpeg" alt="Portrait d'Idrissa Wade" width="600" height="600">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== À PROPOS ========== -->
+    <section id="a-propos" class="section section--alt" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">À propos</span>
+          <h2 id="about-title">Apprendre par la pratique</h2>
+          <p>Je ne me contente pas de suivre les cours : chaque notion devient un projet, un prototype ou un montage que je peux montrer.</p>
+        </div>
+
+        <div class="grid grid--4 reveal" style="margin-bottom:1.25rem">
+          <div class="card stat"><span class="stat__value">2023</span><span class="stat__label">Baccalauréat</span></div>
+          <div class="card stat"><span class="stat__value">L3</span><span class="stat__label">Licence Informatique</span></div>
+          <div class="card stat"><span class="stat__value">4</span><span class="stat__label">domaines explorés : web, data, réseaux, IoT</span></div>
+          <div class="card stat"><span class="stat__value">1</span><span class="stat__label">hackathon</span></div>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">🛠</span>
+            <h3>Ma façon d'apprendre</h3>
+            <p>Je comprends mieux en construisant : un cours devient un projet, une erreur devient une leçon.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">🧭</span>
+            <h3>Mes domaines d'intérêt</h3>
+            <p>Développement logiciel, science des données, réseaux informatiques et Internet des objets.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">🎯</span>
+            <h3>Ma philosophie</h3>
+            <p>Partir d'un besoin réel, livrer une première version utile, puis l'améliorer.</p>
+          </article>
+        </div>
+
+        <!-- Mini-timeline -->
+        <div class="reveal" style="margin-top:3rem">
+          <h3>Mon parcours en bref</h3>
+          <ol class="timeline">
+            <li class="timeline__item"><span class="timeline__date">2023</span><h3>Baccalauréat</h3></li>
+            <li class="timeline__item"><span class="timeline__date">Licence 1 et 2</span><h3>Tronc commun Mathématiques – Physique – Informatique</h3></li>
+            <li class="timeline__item"><span class="timeline__date">Licence 3</span><h3>Licence Informatique</h3></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMPÉTENCES ========== -->
+    <!-- Les niveaux sont des auto-évaluations : modifie data-level (1, 2 ou 3) et le texte pour qu'ils reflètent ta réalité. -->
+    <section id="competences" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Compétences</span>
+          <h2 id="skills-title">Mes compétences</h2>
+          <p>Classées par domaine. Les niveaux indiquent mon rapport à chaque outil, pas une certification.</p>
+        </div>
+
+        <ul class="skills-legend reveal" aria-label="Légende des niveaux">
+          <li>●○○ En apprentissage</li>
+          <li>●●○ Pratique régulière</li>
+          <li>●●● Projet réalisé</li>
+        </ul>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <h3>Développement</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="2"><span>HTML / CSS</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="1"><span>JavaScript</span><span class="skill__level">En apprentissage</span></li>
+              <li class="skill" data-level="2"><span>Python</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="3"><span>Flask</span><span class="skill__level">Projet réalisé</span></li>
+              <li class="skill" data-level="1"><span>Java</span><span class="skill__level">En apprentissage</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Bases de données</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="3"><span>MySQL</span><span class="skill__level">Projet réalisé</span></li>
+              <li class="skill" data-level="2"><span>SQL</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="2"><span>Conception de bases de données</span><span class="skill__level">Pratique régulière</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Data / IA</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="2"><span>Pandas, NumPy</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="2"><span>Matplotlib</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="1"><span>Scikit-learn</span><span class="skill__level">En apprentissage</span></li>
+              <li class="skill" data-level="1"><span>Machine Learning</span><span class="skill__level">En apprentissage</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Réseaux</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="2"><span>LAN / WAN</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="2"><span>Adressage IP</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="2"><span>Cisco Packet Tracer</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="2"><span>Configuration réseau</span><span class="skill__level">Pratique régulière</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>IoT</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="3"><span>ESP32 / Arduino</span><span class="skill__level">Projet réalisé</span></li>
+              <li class="skill" data-level="3"><span>Capteurs DHT</span><span class="skill__level">Projet réalisé</span></li>
+              <li class="skill" data-level="2"><span>I2C / écran LCD</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="2"><span>Blynk</span><span class="skill__level">Pratique régulière</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Outils</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="3"><span>Visual Studio Code</span><span class="skill__level">Projet réalisé</span></li>
+              <li class="skill" data-level="2"><span>Git / GitHub</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="2"><span>XAMPP</span><span class="skill__level">Pratique régulière</span></li>
+              <li class="skill" data-level="1"><span>PowerAMC</span><span class="skill__level">En apprentissage</span></li>
+              <li class="skill" data-level="2"><span>JupyterLab</span><span class="skill__level">Pratique régulière</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJETS (aperçu) ========== -->
+    <section id="projets" class="section section--alt" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Projets</span>
+          <h2 id="projects-title">Ce que j'ai construit</h2>
+          <p>Un aperçu de mes réalisations. Le détail (problème, solution, rôle) est sur la page dédiée.</p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Filtrer les projets par catégorie">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tous</button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-btn" type="button" data-filter="data" aria-pressed="false">Data</button>
+          <button class="filter-btn" type="button" data-filter="reseaux" aria-pressed="false">Réseaux</button>
+          <button class="filter-btn" type="button" data-filter="iot" aria-pressed="false">IoT</button>
+          <button class="filter-btn" type="button" data-filter="autres" aria-pressed="false">Autres</button>
+        </div>
+        <p id="filter-status" class="filter-status" aria-live="polite"></p>
+
+        <div class="grid grid--2">
+          <article class="card project-card reveal" data-category="web">
+            <div class="project-card__media">Web · Flask<img src="images/projets/gestion-pedagogique.jpg" alt="Capture de la plateforme de gestion pédagogique" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head"><h3>Gestion pédagogique universitaire</h3></div>
+              <p>Plateforme web pour centraliser la gestion des étudiants, enseignants, salles, groupes et emplois du temps.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">HTML/CSS</span><span class="tag">MySQL</span></div>
+              <div class="project-card__links"><a href="pages/projets.html#gestion-pedagogique">Voir le détail →</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal" data-category="iot">
+            <div class="project-card__media">IoT · ESP32<img src="images/projets/station-meteo.jpg" alt="Photo de la station météo connectée" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head"><h3>Station météo connectée</h3></div>
+              <p>Système à base d'ESP32 qui mesure des données environnementales, les affiche sur un écran LCD et les rend consultables à distance.</p>
+              <div class="tags"><span class="tag">ESP32</span><span class="tag">DHT</span><span class="tag">LCD I2C</span><span class="tag">Wi-Fi</span><span class="tag">Blynk</span></div>
+              <div class="project-card__links"><a href="pages/projets.html#station-meteo">Voir le détail →</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal" data-category="data">
+            <div class="project-card__media">Data · Machine Learning<img src="images/projets/data-science.jpg" alt="Visualisation du projet Data Science" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head"><h3>Projet Data Science</h3></div>
+              <p>Analyse de données et modèle de Machine Learning : nettoyage, visualisation, modélisation et résultats.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Scikit-learn</span></div>
+              <div class="project-card__links"><a href="pages/projets.html#data-science">Voir le détail →</a></div>
+            </div>
+          </article>
+
+          <article class="card project-card reveal" data-category="reseaux">
+            <div class="project-card__media">Réseaux · Packet Tracer<img src="images/projets/reseaux.jpg" alt="Schéma d'un réseau local sous Cisco Packet Tracer" loading="lazy" onerror="this.remove()"></div>
+            <div class="project-card__body">
+              <div class="project-card__head"><h3>Projets réseaux</h3></div>
+              <p>Conception et configuration de réseaux locaux : adressage IP, communication entre équipements, tests avec ping.</p>
+              <div class="tags"><span class="tag">Cisco Packet Tracer</span><span class="tag">LAN</span><span class="tag">Adressage IP</span></div>
+              <div class="project-card__links"><a href="pages/projets.html#reseaux">Voir le détail →</a></div>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-top:2rem"><a class="btn btn--ghost" href="pages/projets.html">Tous les projets en détail</a></p>
+      </div>
+    </section>
+
+    <!-- ========== PARCOURS ========== -->
+    <section id="parcours" class="section" aria-labelledby="path-title">
+      <div class="container split">
+        <div class="reveal">
+          <span class="section__eyebrow">Parcours</span>
+          <h2 id="path-title">Mon parcours académique</h2>
+          <p style="color:var(--text-muted)">Une formation progressive, qui m'a fait toucher à plusieurs domaines de l'informatique.</p>
+          <p><a class="btn btn--ghost" href="pages/parcours.html">Parcours détaillé</a></p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item"><span class="timeline__date">2023</span><h3>Obtention du Baccalauréat</h3></li>
+          <li class="timeline__item"><span class="timeline__date">Licence 1 et 2</span><h3>Tronc commun Mathématiques – Physique – Informatique (MPI)</h3><p>UFR Sciences et Technologies (UFR STA) — Université Ahmadou Makhtar Mbow (UAM), Diamniadio, Sénégal</p></li>
+          <li class="timeline__item"><span class="timeline__date">Licence 3</span><h3>Licence Informatique</h3><p>Spécialisation en informatique et réalisation de projets.</p></li>
+        </ol>
+      </div>
+    </section>
+    <!-- ========== FORMATIONS EN LIGNE ========== -->
+    <section id="formations" class="section" aria-labelledby="training-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Formations</span>
+          <h2 id="training-title">Formations en ligne</h2>
+          <p>En plus de ma licence, je continue d'apprendre en suivant des formations en ligne.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <h3>Cyber Shield : les fondamentaux de la cybersécurité</h3>
+            <p>Orange Digital Center (programme Tech-Ki) · Dakar · 30 août 2026</p>
+            <div class="tags"><span class="tag">Cybersécurité</span></div>
+            <p style="margin-top:1rem"><a href="assets/attestation-cyber-shield.pdf" target="_blank" rel="noopener noreferrer">Voir l'attestation (PDF) →</a></p>
+          </article>
+          <article class="card reveal">
+            <h3>Formation en développement web</h3>
+            <p>Club Orange Digital Center, Université Amadou Mahtar Mbow de Diamniadio · <span class="todo">2025</span></p>
+            <div class="tags"><span class="tag">Développement web</span></div>
+            <p style="margin-top:1rem"><a href="assets/attestation-developpement-web.pdf" target="_blank" rel="noopener noreferrer">Voir l'attestation (PDF) →</a></p>
+          </article>
+
+      <!-- Copie le bloc <article> ci-dessus pour chaque formation -->
+        </div>
+      </div>
+    </section>
+    <!-- ========== EXPÉRIENCES & RÉALISATIONS ========== -->
+    <section id="experiences" class="section section--alt" aria-labelledby="exp-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Expériences</span>
+          <h2 id="exp-title">Expériences &amp; réalisations</h2>
+          <p>Mes projets sont mes expériences concrètes : ils m'ont appris à analyser un besoin, choisir des outils, livrer et présenter.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card reveal"><span class="card__icon" aria-hidden="true">🎓</span><h3>Projets universitaires</h3><p>Applications web, bases de données, réseaux et data science réalisés dans le cadre de ma licence.</p></article>
+          <article class="card reveal"><span class="card__icon" aria-hidden="true">💡</span><h3>Projets personnels</h3><p>Développements menés par curiosité pour explorer de nouveaux outils et approfondir mes compétences.</p></article>
+          <article class="card reveal"><span class="card__icon" aria-hidden="true">📡</span><h3>IoT &amp; systèmes connectés</h3><p>Prototypage avec ESP32 et capteurs : de la mesure à l'affichage, jusqu'au suivi à distance.</p></article>
+          <article class="card reveal"><span class="card__icon" aria-hidden="true">📊</span><h3>Data Science</h3><p>Du nettoyage des données à la modélisation, avec la bibliothèque Python adaptée à chaque étape.</p></article>
+          <article class="card reveal"><span class="card__icon" aria-hidden="true">🌐</span><h3>Réseaux</h3><p>Simulation de réseaux locaux et vérification de la communication entre équipements.</p></article>
+          <article class="card reveal"><span class="card__icon" aria-hidden="true">🏁</span><h3>Hackathon</h3><p>Conception rapide d'une solution en équipe, puis présentation du projet.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HACKATHON ========== -->
+    <!-- Remplace chaque <span class="todo"> par l'information réelle. Ne rien inventer : si tu ne sais pas, supprime le champ. -->
+    <section id="hackathon" class="section" aria-labelledby="hack-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Hackathons</span>
+          <h2 id="hack-title">Mes hackathons</h2>
+          <p>Travail en équipe, résolution de problèmes et présentation d'une solution en temps limité.</p>
+        </div>
+
+        <div class="grid hack-grid">
+
+        <!-- ===== CARTE HACKATHON 1 : copie ce bloc pour chaque nouvel événement ===== -->
+          <article class="card hack-card reveal">
+            <img class="hack-card__img" src="images/hackathon/hackathon-1/moi.jpeg" alt="Idrissa Wade au hackathon Cezat 2026" loading="lazy">
+            <div class="hack-card__body">
+              <p class="hack-card__meta">Hackathon · <span class="todo">Aout 2026</span></p>
+              <h3>Cezat 2026</h3>
+              <p class="hack-card__place"><span aria-hidden="true">📍</span> <span class="todo">Tivaouane</span></p>
+              <p>DahiraConnect, une plateforme de gestion des dahiras.</p>
+              <div class="tags"><span class="tag todo">Nodejs</span><span class="tag todo">vs code</span></div>
+
+              <details>
+                <summary>Détails du projet</summary>
+                <dl class="hackathon__grid">
+                  <div class="hackathon__field"><dt>Problème traité</dt><dd><span class="todo">Comment Digitaliser la gestion des Dahiras</span></dd></div>
+                  <div class="hackathon__field"><dt>Idée développée</dt><dd><span class="todo">DahiraConnect</span></dd></div>
+                  <div class="hackathon__field"><dt>Équipe</dt><dd><span class="todo">5 membres</span></dd></div>
+                  <div class="hackathon__field"><dt>Mon rôle</dt><dd><span class="todo">Developpeur</span></dd></div>
+                </dl>
+              </details>
+              <a class="hack-card__link" href="#souvenirs-hackathon-1">Voir les souvenirs →</a>
+            </div>
+          </article>
+          <!-- ===== FIN CARTE 1 ===== -->
+
+          </div>
+
+          <!-- ===== SOUVENIRS ===== -->
+          <h3 class="hackathon__sub">Souvenirs</h3>
+
+          <!-- ===== SOUVENIRS HACKATHON 1 (l'id doit correspondre au lien de la carte) ===== -->
+          <div id="souvenirs-hackathon-1" class="souvenir-group">
+            <h4>Cezat 2026</h4>
+            <div class="souvenirs">
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-1.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+                
+              </figure>
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-2.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+              </figure>
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-3.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+                
+              </figure>
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-4.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+                
+              </figure>
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-5.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+                
+              </figure>
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-6.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+                
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-7.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+                <figcaption>Légende 4</figcaption>
+              </figure>
+              <figure class="souvenir">
+                <img src="images/hackathon/hackathon-1/souvenir-8.jpeg" alt="Souvenir du hackathon : DESCRIPTION" loading="lazy" onerror="this.closest('figure').remove()">
+                
+              </figure>
+            <!-- Copie un bloc <figure> par photo -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== FIN HACKATHON 1 ===== -->
+
+    </div>
+    </section>
+
+    <!-- ========== CE QUE JE RECHERCHE ========== -->
+    <section id="recherche" class="section section--alt" aria-labelledby="seek-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Ce que je recherche</span>
+          <h2 id="seek-title">Ouvert aux opportunités</h2>
+          <p>Je cherche à mettre mes compétences en pratique au sein d'équipes qui m'apporteront autant que je leur apporterai : motivation, rigueur et envie de progresser.</p>
+        </div>
+        <ul class="tags reveal" aria-label="Opportunités recherchées">
+          <li class="tag">Stages</li>
+          <li class="tag">Projets</li>
+          <li class="tag">Collaborations</li>
+          <li class="tag">Hackathons</li>
+          <li class="tag">Opportunités professionnelles</li>
+          <li class="tag">Apprentissage</li>
+          <li class="tag">Travail en équipe</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container split">
+        <div class="reveal">
+          <span class="section__eyebrow">Contact</span>
+          <h2 id="contact-title">Parlons de votre projet</h2>
+          <p style="color:var(--text-muted)">Une proposition de stage, une collaboration ou une question ? Écrivez-moi.</p>
+          <p><a class="btn btn--primary" href="pages/contact.html">Ouvrir le formulaire de contact</a></p>
+        </div>
+        <div class="contact-links reveal">
+          <a href="mailto:EMAIL"><span aria-hidden="true">✉</span> EMAIL</a>
+          <a href="https://github.com/Idrissa2203" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⌥</span> GitHub — GITHUB_URL</a>
+          <a href="https://www.linkedin.com/in/idrissa-wade-7242432b9" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">in</span> LinkedIn — LINKEDIN_URL</a>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Idrissa Wade</p>
+        <p>Étudiant en Licence 3 Informatique</p>
+        <p>UFR STA — Université Ahmadou Makhtar Mbow</p>
+        <p>Diamniadio, Sénégal</p>
+      </div>
+      <nav class="footer__links" aria-label="Liens externes">
+        <a href="https://github.com/Idrissa2203" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/idrissa-wade-7242432b9" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:EMAIL">Email</a>
+      </nav>
+      <p class="footer__copy">© 2026 Idrissa Wade — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="icon-btn back-to-top" type="button" aria-label="Retour en haut de la page">↑</button>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/filters.js" defer></script>
+  <script src="js/scroll-top.js" defer></script>
+</body>
+</html>

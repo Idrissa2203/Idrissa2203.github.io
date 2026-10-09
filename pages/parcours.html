@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add("js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      d.setAttribute("data-theme", t || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));
+    })();
+  </script>
+
+  <title>Parcours | Idrissa Wade — Étudiant en Informatique &amp; Développeur</title>
+  <meta name="description" content="Parcours d'Idrissa Wade : baccalauréat 2023, Licence Informatique à l'UFR STA de l'Université Ahmadou Makhtar Mbow, domaines techniques explorés.">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Parcours | Idrissa Wade">
+  <meta property="og:description" content="Un parcours en informatique construit à travers la pratique et les projets.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="../index.html" aria-label="Idrissa Wade — accueil">
+        <span class="brand__mark" aria-hidden="true">IW</span>
+        <span class="brand__name">Idrissa Wade</span>
+      </a>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="../index.html#accueil">Accueil</a></li>
+          <li><a class="nav__link" href="../index.html#a-propos">À propos</a></li>
+          <li><a class="nav__link" href="../index.html#competences">Compétences</a></li>
+          <li><a class="nav__link" href="projets.html">Projets</a></li>
+          <li><a class="nav__link" href="parcours.html" aria-current="page">Parcours</a></li>
+          <li><a class="nav__link" href="../index.html#experiences">Expériences</a></li>
+          <li><a class="nav__link" href="../index.html#hackathon">Hackathon</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Changer de thème">☀</button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="page-hero">
+      <div class="container">
+        <span class="section__eyebrow">Parcours</span>
+        <h1>Mon parcours</h1>
+        <p>Une formation progressive en informatique, nourrie par des projets dans plusieurs domaines.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:2rem">
+      <div class="container split">
+
+        <div class="reveal">
+          <h2>Parcours académique</h2>
+          <ol class="timeline">
+            <li class="timeline__item"><span class="timeline__date">2023</span><h3>Baccalauréat</h3></li>
+            <li class="timeline__item"><span class="timeline__date">Licence 1 et 2</span><h3>Tronc commun Mathématiques – Physique – Informatique</h3></li>
+            <li class="timeline__item"><span class="timeline__date">Licence 3</span><h3>Licence Informatique</h3></li>
+          </ol>
+        </div>
+
+        <!-- Les périodes sont à compléter par toi : on ne devine pas les dates. -->
+        <div class="reveal">
+          <h2>Apprentissage technique</h2>
+          <p style="color:var(--text-muted)">Domaines explorés au fil de ma formation. <span class="todo"></span></p>
+          <ol class="timeline">
+            <li class="timeline__item"><span class="timeline__date todo">2025-2026</span><h3>Développement web</h3><p>HTML, CSS, JavaScript.</p></li>
+            <li class="timeline__item"><span class="timeline__date todo">2025-2026</span><h3>Programmation et bases de données</h3><p>Python, Flask, Java, SQL / MySQL, conception de bases de données.</p></li>
+            <li class="timeline__item"><span class="timeline__date todo">2025-2026</span><h3>Réseaux informatiques</h3><p>LAN, WAN, adressage IP, Cisco Packet Tracer.</p></li>
+            <li class="timeline__item"><span class="timeline__date todo">2025-2026</span><h3>Internet des objets</h3><p>Arduino, ESP32, capteurs, systèmes connectés.</p></li>
+            <li class="timeline__item"><span class="timeline__date todo">2025-2026</span><h3>Data Science et Machine Learning</h3><p>Pandas, NumPy, Matplotlib, Scikit-learn.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Expériences</span>
+          <h2>Expériences &amp; réalisations</h2>
+          <p>Je n'ai pas encore d'expérience professionnelle longue : mes projets en tiennent lieu et montrent ce que je sais faire.</p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card reveal"><h3>Projets universitaires</h3><p>Web, bases de données, réseaux et data science.</p><p><a href="projets.html">Voir les projets →</a></p></article>
+          <article class="card reveal"><h3>Projets personnels</h3><p>Développements menés pour explorer de nouveaux outils.</p></article>
+          <article class="card reveal"><h3>Hackathon</h3><p>Travail en équipe et présentation d'une solution en temps limité.</p><p><a href="../index.html#hackathon">Voir le hackathon →</a></p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Idrissa Wade</p>
+        <p>Étudiant en Licence 3 Informatique</p>
+        <p>UFR STA — Université Ahmadou Makhtar Mbow</p>
+        <p>Diamniadio, Sénégal</p>
+      </div>
+      <nav class="footer__links" aria-label="Liens externes">
+        <a href="GITHUB_URL" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="LINKEDIN_URL" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:EMAIL">Email</a>
+      </nav>
+      <p class="footer__copy">© 2026 Idrissa Wade — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="icon-btn back-to-top" type="button" aria-label="Retour en haut de la page">↑</button>
+
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/reveal.js" defer></script>
+  <script src="../js/scroll-top.js" defer></script>
+</body>
+</html>

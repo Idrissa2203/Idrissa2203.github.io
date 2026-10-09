@@ -1,0 +1,332 @@
+/* ==========================================================================
+   components.css — Boutons, cartes, badges, compétences, projets,
+   timeline, hackathon, formulaire
+   ========================================================================== */
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: 600 0.95rem var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+.btn--primary { background: var(--accent); color: var(--accent-ink); }
+.btn--primary:hover { background: var(--accent-2); }
+.btn--ghost { border-color: var(--border-strong); color: var(--text); background: transparent; }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn--text { padding-inline: 0.2rem; color: var(--accent); }
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.icon-btn:hover { border-color: var(--accent); }
+
+/* ---------- Cartes ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+.card__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  font-size: 1.3rem;
+}
+.card p:last-child { margin-bottom: 0; }
+.card p { color: var(--text-muted); }
+
+.stat { text-align: center; }
+.stat__value {
+  display: block;
+  font: 700 1.9rem var(--font-title);
+  color: var(--accent);
+}
+.stat__label { color: var(--text-muted); font-size: 0.9rem; }
+
+/* ---------- Badges / tags ---------- */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font: 500 0.78rem var(--font-mono);
+  color: var(--text);
+}
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font: 600 0.75rem var(--font-body);
+}
+.badge--todo { border-style: dashed; }
+
+/* Champ à compléter */
+.todo {
+  padding: 0.05rem 0.4rem;
+  border: 1px dashed var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* ---------- Compétences ---------- */
+.skills-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+.skill-list { display: grid; gap: 0.55rem; margin-top: 1rem; }
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-size: 0.92rem;
+}
+.skill__level {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  text-align: right;
+}
+/* Les points s'ajoutent au texte : le niveau n'est jamais donné par la couleur seule */
+.skill[data-level="1"] .skill__level::before { content: "●○○" / ""; color: var(--accent); letter-spacing: 1px; }
+.skill[data-level="2"] .skill__level::before { content: "●●○" / ""; color: var(--accent); letter-spacing: 1px; }
+.skill[data-level="3"] .skill__level::before { content: "●●●" / ""; color: var(--accent); letter-spacing: 1px; }
+
+/* ---------- Filtres ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.filter-btn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+  font: 500 0.9rem var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.filter-btn:hover { border-color: var(--accent); }
+.filter-btn[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+/* ---------- Cartes projet ---------- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+.project-card[hidden] { display: none; }
+.project-card__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, var(--accent-soft), rgba(56, 189, 248, 0.1)),
+    var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  font: 600 0.8rem var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+/* Si tu ajoutes une capture dans images/projets/, elle recouvre le fond */
+.project-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+  padding: 1.5rem;
+}
+.project-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+.project-card__head h3 { margin: 0; }
+.project-card__body p { margin: 0; color: var(--text-muted); }
+.project-card__body strong { color: var(--text); }
+.project-card__list { list-style: disc; padding-left: 1.1rem; color: var(--text-muted); font-size: 0.93rem; }
+.project-card__links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: auto; padding-top: 0.5rem; }
+.filter-status { color: var(--text-muted); font-size: 0.88rem; margin-top: -1rem; margin-bottom: 1.5rem; }
+
+/* ---------- Timeline ---------- */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  padding-left: 1.75rem;
+  border-left: 2px solid var(--border-strong);
+}
+.timeline__item { position: relative; }
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.75rem - 7px);
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.timeline__date { font: 600 0.85rem var(--font-mono); color: var(--accent); }
+.timeline__item h3 { margin: 0.15rem 0 0.25rem; }
+.timeline__item p { color: var(--text-muted); margin: 0; }
+
+/* ---------- Hackathon (section visuellement distincte) ---------- */
+.hackathon {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: calc(var(--radius) + 6px);
+  border: 2px dashed var(--accent);
+  background:
+    radial-gradient(circle at top right, var(--accent-soft), transparent 55%),
+    var(--surface);
+}
+.hackathon__label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 700 0.78rem var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hackathon__grid { display: grid; gap: 1rem 2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 1.5rem; }
+.hackathon__field dt { font: 600 0.8rem var(--font-mono); color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+.hackathon__field dd { margin: 0.2rem 0 0; color: var(--text); }
+
+/* ---------- Formulaire ---------- */
+.form { display: grid; gap: 1.25rem; }
+.form__group { display: grid; gap: 0.4rem; }
+.form label { font-weight: 600; font-size: 0.92rem; }
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+}
+.form textarea { min-height: 150px; resize: vertical; }
+.form input:focus-visible,
+.form textarea:focus-visible { outline-offset: 1px; border-color: var(--accent-2); }
+.form [aria-invalid="true"] { border-color: #f87171; border-width: 2px; }
+.field-error {
+  margin: 0;
+  min-height: 1.2em;
+  color: #f87171;
+  font-size: 0.85rem;
+}
+:root[data-theme="light"] .field-error { color: #b91c1c; }
+.field-error:not(:empty)::before { content: "⚠ "; }
+.form__status { margin: 0; font-weight: 600; }
+.form__status--ok { color: var(--accent); }
+.form__status--error { color: #f87171; }
+/* ---------- Hackathon : photo + souvenirs ---------- */
+.hackathon__top { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.hackathon__me {
+  flex: 0 0 auto;
+  width: 160px;
+  aspect-ratio: 1;
+  margin: 0;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  background: var(--accent-soft);
+  overflow: hidden;
+}
+.hackathon__me img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.hackathon__sub { margin-top: 2.5rem; }
+
+.souvenirs { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.souvenir {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.souvenir img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.3s ease; }
+.souvenir:hover img { transform: scale(1.04); }
+.souvenir figcaption { padding: 0.6rem 0.8rem; color: var(--text-muted); font-size: 0.85rem; }
+
+.hackathon + .hackathon { margin-top: 2rem; }
+.hackathon__title { margin: 0 0 0.5rem; font-size: 1.5rem; }
+/* ---------- Cartes hackathon ---------- */
+.hack-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.hack-card__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 25%;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--border);
+}
+.hack-card__body { display: flex; flex-direction: column; gap: 0.6rem; padding: 1.25rem 1.5rem 1.5rem; flex: 1; }
+.hack-card__body > * { margin: 0; }
+.hack-card__meta { font: 600 0.8rem var(--font-mono); color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+.hack-card__place { color: var(--text-muted); font-size: 0.9rem; }
+.hack-card details { font-size: 0.92rem; }
+.hack-card summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.hack-card .hackathon__grid { grid-template-columns: 1fr; margin-top: 1rem; }
+.hack-card__link { margin-top: auto; padding-top: 0.5rem; font-weight: 600; }
+
+.souvenir-group { margin-top: 2.5rem; }
+.souvenir-group h4 { margin-bottom: 1rem; }
+.hack-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.hack-card__img { max-height: 260px; }
